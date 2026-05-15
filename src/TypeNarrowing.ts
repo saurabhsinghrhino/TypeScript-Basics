@@ -35,3 +35,25 @@ printValue("hello");
 
 // Passing a number
 printValue(5);
+
+//Exhaustive Checks Function
+// =====================================
+
+function getDrink(size: "small" | "medium" | "large" | number) {
+  // Check the sizes of a drink
+  if (size === "small") return "Make small glass of drink";
+  if (size === "medium") return "Make medium glass of drink";
+  if (size === "large") return "Make large glass of drink";
+
+  // Exhaustive check
+
+  return `No. of ordered drinks is : ${size}`; // This is a worst case condition
+}
+
+//Exhaustive Checks Function Calls
+// =====================================
+
+getDrink("small");
+getDrink("medium");
+getDrink("large");
+getDrink(5);
