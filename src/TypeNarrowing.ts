@@ -57,3 +57,54 @@ getDrink("small");
 getDrink("medium");
 getDrink("large");
 getDrink(5);
+
+//This is how the classes are making typescript
+// =====================================
+
+// class kulhadChai {
+//   serve() {
+//     console.log("Serving kulhad chai...");
+//   }
+// }
+
+// class Cutting {
+//   serve() {
+//     console.log("Serving cutting...");
+//   }
+// }
+
+// function serve(item: kulhadChai | Cutting) {
+//   if (item instanceof kulhadChai) {
+//     return item.serve();
+//   }
+// }
+
+// Now Here we see the type method in typescript
+// =====================================
+
+type Coke = { type: "No Sugar"; color: "Black" };
+type Slice = { type: "Mango Drink"; color: "orange" };
+type Sprit = { type: "High Caffeine"; color: "Transparent" };
+
+type Drinks = Coke | Slice | Sprit;
+
+function servingDrinks(item: Drinks) {
+  switch (item.type) {
+    case "No Sugar":
+      return "Your Ordered a Coke";
+      break;
+    case "High Caffeine":
+      return "Your Ordered a Sprit";
+      break;
+    case "Mango Drink":
+      return "Your Ordered a Slice";
+      break;
+  }
+}
+
+console.log(
+  servingDrinks({
+    type: "No Sugar",
+    color: "Black",
+  }),
+);
