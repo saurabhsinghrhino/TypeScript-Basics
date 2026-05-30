@@ -108,6 +108,18 @@ function sayHello(): void {
 // never:
 // Function NEVER finishes normally
 
-function crashApp(): never {
-  throw new Error("App Crashed");
+type Role = "admin" | "user" | "superadmin";
+
+function redirectBasedOnRole(role: Role): void {
+  if (role === "admin") {
+    console.log("Redirecting to admin page");
+    return;
+  }
+  if (role === "user") {
+    console.log("Redirecting to user page");
+    return;
+  }
+  role;
 }
+
+redirectBasedOnRole("admin");
