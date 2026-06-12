@@ -113,3 +113,20 @@ orderCoffee({ name: "Cold Coffee", price: 99 });
 // The Pick utility was make some parameters required and if you pass only required parameter's instead of passing all the properties...
 // It's similar to the partial property but you can't pass empty object in parameters...
 // <------------------------->
+
+//4. Omit Utility
+
+type User = {
+  name: string;
+  age: number;
+  email: string;
+};
+
+// Remove the "email" property
+type UserWithoutEmail = Omit<User, "email">;
+
+const user: UserWithoutEmail = {
+  name: "Saurabh",
+  age: 21,
+};
+// Omit is a TypeScript utility type that creates a new type by removing specific properties from an existing type.
