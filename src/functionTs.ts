@@ -9,3 +9,21 @@ function getSum(a: number, b: number): number {
   return a + b;
 }
 console.log(getSum(10, 20));
+
+// If a function can't return any type of value so can do this
+function sayHello(name: string): void {
+  console.log(`Hello, ${name}!`);
+}
+sayHello("Saurabh");
+
+// This is the example of function were the parameter is optional
+
+// This is the 1st way...
+function User(name?: string) {
+  console.log(`Hello, ${name}!`);
+}
+
+// This is the 2nd way...
+function user(name: string = "User") {
+  console.log(`Hello, ${name}!`);
+}
